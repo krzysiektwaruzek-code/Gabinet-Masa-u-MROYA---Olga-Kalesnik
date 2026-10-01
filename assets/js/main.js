@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Gabinet Masażu u Mroya — skrypt strony
+   Gabinet Masażu Mroya — skrypt strony
    Zero zależności. Każdy moduł działa niezależnie i bezpiecznie pomija się,
    gdy odpowiedniego elementu nie ma w DOM.
    ========================================================================== */
@@ -111,7 +111,7 @@
       var frame = document.createElement('iframe');
 
       frame.src = mapBtn.getAttribute('data-src');
-      frame.title = 'Mapa Google: Gabinet Masażu u Mroya, ul. Jaworowa 6, Gdańsk';
+      frame.title = 'Mapa Google: Gabinet Masażu Mroya, ul. Jaworowa 6, Gdańsk';
       frame.loading = 'lazy';
       frame.referrerPolicy = 'no-referrer-when-downgrade';
       frame.allowFullscreen = true;

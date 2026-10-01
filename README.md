@@ -1,4 +1,4 @@
-# Gabinet Masażu u Mroya — strona internetowa
+# Gabinet Masażu Mroya — strona internetowa
 
 Statyczna strona-wizytówka (HTML / CSS / JS, bez frameworków i bez kroku budowania), gotowa do wgrania na Hostinger.
 
@@ -9,7 +9,7 @@ Statyczna strona-wizytówka (HTML / CSS / JS, bez frameworków i bez kroku budow
 
 | Informacja | Status | Źródło |
 |---|---|---|
-| Nazwa: **Gabinet Masażu u Mroya** | potwierdzone | nazwa repozytorium nadana przez zleceniodawcę |
+| Nazwa: **Gabinet Masażu Mroya** | potwierdzone | podana i skorygowana przez zleceniodawcę (nazwa repozytorium nadal zawiera „u-MROYA” — do zmiany na GitHubie) |
 | Osoba: **Olga Kalesnik** | do potwierdzenia przez właściciela | nazwa repozytorium (pokazana tylko jako podpis w karcie „Gabinet") |
 | Adres: **Femika Strefa Kobiet, ul. Jaworowa 6, 80-175 Gdańsk** | potwierdzone | podany przez zleceniodawcę |
 | Link do wizytówki Google Maps | potwierdzone | podany przez zleceniodawcę (`cid=17050173415233364946`) |
@@ -18,7 +18,7 @@ Statyczna strona-wizytówka (HTML / CSS / JS, bez frameworków i bez kroku budow
 
 Research: bezpośredni dostęp do Google Maps, Facebooka, Booksy, ZnanyLekarz, Fresha i femika.pl był zablokowany
 przez politykę sieciową środowiska, w którym powstała strona. Wyszukiwarka nie zwróciła żadnego potwierdzonego
-wpisu dotyczącego samego gabinetu „u Mroya". Dane **Femiki** (telefon, e-mail, cennik) dotyczą innego podmiotu
+wpisu dotyczącego samego gabinetu „Mroya". Dane **Femiki** (telefon, e-mail, cennik) dotyczą innego podmiotu
 (lokalu pod tym adresem), więc **nie zostały** przypisane gabinetowi.
 
 ## Struktura
@@ -34,7 +34,7 @@ assets/
   css/layout.css        nagłówek, hero, sekcje, stopka
   css/components.css    przyciski, karty, formularz, mapa, animacje
   js/main.js            menu, reveal, mapa po kliknięciu, formularz (bez zależności)
-  fonts/                Fraunces + Inter (WOFF2, tylko znaki łacińskie i polskie, licencja OFL)
+  fonts/                DM Sans (WOFF2, tylko znaki łacińskie i polskie, licencja OFL)
   img/                  favicon (tymczasowy znak geometryczny), grafika Open Graph
 scripts/set-domain.sh   podmiana __SITE_URL__ na właściwą domenę
 ```
@@ -81,7 +81,7 @@ widzi komunikat, że formularz nie jest aktywny. Aby podłączyć:
 
 ## Wydajność, dostępność, prywatność
 
-- Brak zewnętrznych fontów i bibliotek; łączny rozmiar fontów ≈ 75 KB; JS ≈ 8 KB.
+- Brak zewnętrznych fontów i bibliotek; łączny rozmiar fontów ≈ 36 KB; JS ≈ 8 KB.
 - Mapa Google ładuje się dopiero po kliknięciu (szybszy start, brak śledzenia bez zgody).
 - Brak cookies i analityki, więc baner cookies nie jest potrzebny. **Dodanie analityki to zmieni.**
 - Semantyczny HTML, link „Przejdź do treści", widoczny fokus, `prefers-reduced-motion`, kontrast WCAG AA,

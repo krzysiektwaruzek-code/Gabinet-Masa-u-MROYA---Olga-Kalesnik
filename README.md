@@ -37,6 +37,7 @@ assets/
   fonts/                DM Sans (WOFF2, tylko znaki łacińskie i polskie, licencja OFL)
   img/                  favicon (tymczasowy znak geometryczny), grafika Open Graph
 scripts/set-domain.sh   podmiana __SITE_URL__ na właściwą domenę
+scripts/bump-version.sh wersjonowanie CSS/JS (unika starego cache przeglądarki)
 ```
 
 Podgląd lokalny: `python3 -m http.server 8080` w katalogu projektu, potem `http://127.0.0.1:8080`.
@@ -62,6 +63,8 @@ Miejsca w `index.html` oznaczone komentarzem `UZUPEŁNIJ` i atrybutem `data-fill
 
 ## Wdrożenie na Hostingerze
 
+0. Przed każdym wgraniem uruchom `./scripts/bump-version.sh` — dopisuje wersję do plików CSS/JS, żeby
+   przeglądarki odwiedzających (i Ty podczas testów) nie używały starych, zapamiętanych plików.
 1. Podmień znacznik domeny: `./scripts/set-domain.sh https://twojadomena.pl`
    (aktualizuje canonical, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`).
 2. Wgraj zawartość repozytorium do `public_html` (Menedżer plików / FTP) **albo** podłącz repo przez

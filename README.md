@@ -81,7 +81,7 @@ widzi komunikat, że formularz nie jest aktywny. Aby podłączyć:
 
 ## Wydajność, dostępność, prywatność
 
-- Brak zewnętrznych fontów i bibliotek; łączny rozmiar fontów ≈ 75 KB; JS ≈ 6 KB.
+- Brak zewnętrznych fontów i bibliotek; łączny rozmiar fontów ≈ 75 KB; JS ≈ 8 KB.
 - Mapa Google ładuje się dopiero po kliknięciu (szybszy start, brak śledzenia bez zgody).
 - Brak cookies i analityki, więc baner cookies nie jest potrzebny. **Dodanie analityki to zmieni.**
 - Semantyczny HTML, link „Przejdź do treści", widoczny fokus, `prefers-reduced-motion`, kontrast WCAG AA,

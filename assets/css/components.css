@@ -1,0 +1,701 @@
+/* ==========================================================================
+   KOMPONENTY
+   ========================================================================== */
+
+/* ---------- Przyciski ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 52px;
+  padding: 0 1.6rem;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), background-color 0.25s, border-color 0.25s, color 0.25s,
+    box-shadow 0.25s;
+}
+
+.btn .icon {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.25s var(--ease);
+}
+
+.btn:hover .icon {
+  transform: translateX(3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-sm {
+  min-height: 44px;
+  padding: 0 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Główne CTA — glina, ciemny tekst (kontrast ≈ 8:1) */
+.btn-primary {
+  background: var(--clay-300);
+  color: var(--ink);
+  box-shadow: 0 10px 24px -12px rgba(156, 83, 47, 0.7);
+}
+
+.btn-primary:hover {
+  background: var(--clay-200);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -12px rgba(156, 83, 47, 0.75);
+}
+
+.btn-ghost {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--white);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline {
+  border-color: var(--sage-700);
+  color: var(--sage-800);
+}
+
+.btn-outline:hover {
+  background: var(--sage-700);
+  color: var(--white);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------- Etykieta nad nagłówkiem ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay-600);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.on-dark .eyebrow,
+.hero .eyebrow {
+  color: var(--clay-300);
+}
+
+/* ---------- Szklana karta adresowa (hero) ---------- */
+.glass-card {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  color: #eef4f1;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.glass-card .card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay-300);
+}
+
+.glass-card address {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.glass-card address span {
+  display: block;
+}
+
+.glass-card address .addr-venue {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(238, 244, 241, 0.8);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 1px;
+  line-height: 1.3;
+  transition: gap 0.25s var(--ease), color 0.2s;
+}
+
+.text-link:hover {
+  gap: 0.8rem;
+}
+
+.glass-card .text-link {
+  color: var(--clay-200);
+}
+
+/* ---------- Karty faktów (O gabinecie) ---------- */
+.fact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .fact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s;
+}
+
+.fact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+
+.fact-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.75rem;
+  color: var(--sage-700);
+  background: var(--sage-100);
+  border-radius: 14px;
+}
+
+.fact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.fact-value {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.fact-sub {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.fact-card--pending {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  box-shadow: none;
+}
+
+.fact-card--pending:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.fact-card--pending .fact-icon {
+  color: var(--ink-mute);
+  background: var(--paper-3);
+}
+
+.fact-card--pending .fact-value {
+  color: var(--ink-mute);
+}
+
+/* Znacznik „Wkrótce" — miejsce czeka na dane od właściciela */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 28px;
+  padding: 0 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--clay-700);
+  background: rgba(228, 167, 133, 0.28);
+  border-radius: 999px;
+}
+
+/* ---------- Oferta: stan pusty + gotowa karta usługi ---------- */
+.empty-state {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(18, 32, 29, 0.025) 14px 15px),
+    var(--paper);
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 760px) {
+  .empty-state {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.empty-state .fact-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  border-radius: 18px;
+}
+
+.empty-state h3 {
+  font-size: var(--fs-h3);
+}
+
+.empty-state p {
+  margin-top: 0.4rem;
+  max-width: 38rem;
+  color: var(--ink-soft);
+}
+
+/* Karta usługi: gotowa do użycia po otrzymaniu oferty (patrz komentarz w index.html) */
+.service-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+@media (min-width: 640px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.6rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.service-card h3 {
+  font-size: var(--fs-h3);
+}
+
+.service-card p {
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sage-700);
+}
+
+/* ---------- Mapa (ładowana po kliknięciu) ---------- */
+.map-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: clamp(320px, 62vw, 460px);
+  background: var(--sage-800);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+
+.map-card iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-facade {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #eef4f1;
+  background:
+    radial-gradient(60% 60% at 70% 20%, rgba(228, 167, 133, 0.25), transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(160deg, var(--sage-800), var(--sage-950));
+}
+
+.map-pin {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  color: var(--ink);
+  background: var(--clay-300);
+  border-radius: 50% 50% 50% 8px;
+  transform: rotate(-45deg);
+  box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.5);
+}
+
+.map-pin .icon {
+  width: 26px;
+  height: 26px;
+  transform: rotate(45deg);
+}
+
+.map-facade address {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.map-privacy {
+  max-width: 24rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(238, 244, 241, 0.72);
+}
+
+/* ---------- Dane kontaktowe ---------- */
+.contact-list {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.contact-item .fact-icon {
+  margin: 0;
+}
+
+.contact-label,
+.contact-value {
+  display: block;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.contact-value {
+  margin-top: 0.15rem;
+  color: var(--ink);
+}
+
+/* ---------- Formularz ---------- */
+.form-card {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.form-card h3 {
+  font-size: var(--fs-h3);
+}
+
+.form-card > p {
+  margin-top: 0.4rem;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.form {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 1.15rem;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label,
+.field .label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field .opt {
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem; /* 16px — iOS nie przybliża pola przy fokusie */
+  background: var(--paper);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--sage-600);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  background: var(--white);
+  border-color: var(--sage-700);
+  box-shadow: 0 0 0 4px rgba(31, 79, 71, 0.18);
+}
+
+.field [aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.field-error {
+  min-height: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a1221b;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.check {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.field label.check {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.check input {
+  width: 24px;
+  height: 24px;
+  margin: 1px 0 0;
+  accent-color: var(--sage-700);
+}
+
+/* Pułapka na boty — niewidoczna dla ludzi */
+.hp {
+  position: absolute !important;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status[data-state="info"] {
+  color: var(--sage-900);
+  background: var(--sage-100);
+}
+
+.form-status[data-state="success"] {
+  color: #14532d;
+  background: #dcf3e3;
+}
+
+.form-status[data-state="error"] {
+  color: #7a1914;
+  background: #fbe3e1;
+}
+
+/* ---------- Animacja pojawiania się (reveal-on-scroll) ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Delikatne wejście hero przy ładowaniu */
+.hero-in {
+  animation: rise 0.9s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-glow,
+  .hero-rings {
+    animation: none;
+  }
+}
+
+/* ---------- Warianty kontekstowe ---------- */
+.fact-label {
+  font-family: var(--font-body);
+}
+
+.location-address {
+  margin-top: 1.1rem;
+}
+
+.form-card {
+  color: var(--ink);
+}
+
+.form-card :focus-visible {
+  outline-color: var(--focus);
+}
+
+/* Elementy na ciemnym tle */
+.on-dark .split-copy > p:not(.eyebrow) {
+  color: rgba(238, 244, 241, 0.84);
+}
+
+.fact-icon--dark {
+  color: var(--clay-300);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.on-dark .contact-label {
+  color: rgba(238, 244, 241, 0.7);
+}
+
+.on-dark .contact-value {
+  color: var(--white);
+}
+
+.on-dark .contact-value.is-pending {
+  color: rgba(238, 244, 241, 0.72);
+}

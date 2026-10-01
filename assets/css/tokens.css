@@ -1,0 +1,95 @@
+/* ==========================================================================
+   TOKENY — kolory, typografia, odstępy. Zmieniasz tutaj, zmienia się wszędzie.
+   Kolory dobrane pod kontrast WCAG AA (tekst ≥ 4.5:1, elementy UI ≥ 3:1).
+   ========================================================================== */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-ext.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-ext.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* Neutralne */
+  --ink: #12201d;
+  --ink-soft: #3a4a46;
+  --ink-mute: #54635e;
+  --paper: #f7f3ed;
+  --paper-2: #efe8dd;
+  --paper-3: #e4dacb;
+  --white: #ffffff;
+  --line: rgba(18, 32, 29, 0.12);
+  --line-strong: rgba(18, 32, 29, 0.22);
+
+  /* Zieleń szałwiowa — kolor główny */
+  --sage-950: #0b1f1c;
+  --sage-900: #0f2a26;
+  --sage-800: #173b35;
+  --sage-700: #1f4f47;
+  --sage-600: #2b6359;
+  --sage-400: #6fa597;
+  --sage-200: #bcd6cd;
+  --sage-100: #dfece7;
+
+  /* Glina — akcent ciepły (CTA) */
+  --clay-700: #8a4527;
+  --clay-600: #9c532f;
+  --clay-400: #d98f68;
+  --clay-300: #e4a785;
+  --clay-200: #f1cdb7;
+
+  --focus: #9c532f;
+  --focus-on-dark: #f1cdb7;
+
+  /* Typografia */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-h1: clamp(2.6rem, 1.4rem + 5.6vw, 5.4rem);
+  --fs-h2: clamp(1.85rem, 1.2rem + 2.6vw, 3rem);
+  --fs-h3: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
+  --fs-lead: clamp(1.075rem, 1rem + 0.45vw, 1.3rem);
+
+  /* Kształty i cienie */
+  --radius-sm: 12px;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 1px 2px rgba(15, 42, 38, 0.06), 0 4px 12px rgba(15, 42, 38, 0.05);
+  --shadow: 0 2px 4px rgba(15, 42, 38, 0.05), 0 18px 40px -14px rgba(15, 42, 38, 0.2);
+
+  /* Układ */
+  --container: 1160px;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --section-y: clamp(4rem, 8vw, 7.5rem);
+  --header-h: 72px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
